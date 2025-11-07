@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 관리</title>
+    <!-- 헤더 css -->
+    <link rel="stylesheet" href="../adminBaseCss/header/adminHeader.css">
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="../adminBaseCss/footer/adminFooter.css">
+    <!-- 사이드바 css -->
+    <link rel="stylesheet" href="../adminBaseCss/sidebar/adminSidebar.css">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../adminBaseCss/adminCommon.css">
+    <!-- 회원 목록 전용 -->
+    <link rel="stylesheet" href="css/adminUser.css">
+</head>
+
+<body>
+    <!-- 헤더(헤더 css) -->
+    <header id="admin_header">
+        <a href="http://127.0.0.1:5500/home/home.html" class="main_logo"><img src="img/logo.png" alt="logo"></a>
+        <div class="admin_info">
+            <p>관리자 님</p>
+            <a href="#" id="admin_logout" class="admin_logout_link">Logout</a>
+        </div>
+    </header>
+    <!-- 사이드바(사이드바 css, 공통 js) -->
+    <div id="admin_sidebar">
+        <a href="../adminHome/adminHome.html" class="admin_home">DashBoard</a>
+        <div class="admin_sidebar_menu">
+            <ul>
+                <li class="aSidebar_sub">
+                    <button type="button" class="sidebar_toggle">👤 회원</button>
+                    <ul class="aSidebar_sub_menu">
+                        <li><a href="../adminUser/adminUser.html">회원관리</a></li>
+                    </ul>
+                </li>
+
+                <li class="aSidebar_sub">
+                    <button type="button" class="sidebar_toggle">📚 교육</button>
+                    <ul class="aSidebar_sub_menu">
+                        <li><a href="../adminCourseList/adminCourseList.html" class="active">강의목록</a></li>
+                        <li><a href="../adminCourseAdd/adminCourseAdd.html">신규강의등록</a></li>
+                        <li><a href="#">교육자료</a></li>
+                        <li><a href="#">교육자료등록</a></li>
+                    </ul>
+                </li>
+
+                <li class="aSidebar_sub">
+                    <button type="button" class="sidebar_toggle">💬 소식센터</button>
+                    <ul class="aSidebar_sub_menu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">공지사항등록</a></li>
+                        <li><a href="#">문의사항</a></li>
+                        <li><a href="#">보도자료</a></li>
+                        <li><a href="#">보도자료등록</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 메인(공통 css) -->
+    <main id="container">
+        <!-- 맨 위 타이틀(공통 css) -->
+        <div class="main_title"><a href="../adminUser/adminUser.html">회원관리</a></div>
+        <div class="admin_tot_srch_box">
+            <div class="admin_totCnt_box">
+                <p>Total : <span id="admin_tot_cnt"></span> 건</p>
+                <select id="admin_row_select">
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select>
+                <span>건씩 보기</span>
+            </div>
+            <!-- 회원 검색 (공통 css) -->
+            <div class="admin_srch_field">
+                <input type="text" name="user_keyword" class="admin_srch_input" placeholder="회원의 이름 및 아이디를 입력해 주세요.">
+                <button type="submit" class="admin_srch_icon">
+                    <img src="img/srchImg.png" alt="검색">
+                </button>
+            </div>
+        </div>
+        <!-- 회원 목록 테이블 (공통 css) -->
+        <div id="admin_user_box" class="admin_table_box">
+            <table id="admin_user_table" class="admin_table_cont">
+                <thead>
+                    <tr>
+                        <th style="width: 70px;">No.</th>
+                        <th style="width: 250px;">회원명(회원아이디)</th>
+                        <th style="width: 290px;">이메일</th>
+                        <th style="width: 180px;">휴대전화</th>
+                        <th style="width: 140px;">생년월일</th>
+                        <th style="width: 290px;">주소</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- js에서 더미데이터 사용(화면 확인용) -->
+                </tbody>
+            </table>
+        </div>
+        <!-- 회원 목록 페이징 버튼(공통 css,js) -->
+        <div id="pagination" class="paging_btn"></div>
+
+        <!-- 회원 수강 정보 모달(공통 css) -->
+        <div id="aUser_detail" class="admin_modal">
+            <div class="admin_modal_cont">
+                <span class="modal_close_btn">&times;</span>
+                <h3>회원 수강 정보</h3>
+                <p class="dm_user_name">회원명: <span id="dm_user_name"></span></p>
+                <table id="aUser_detail_table">
+                    <thead>
+                        <tr>
+                            <th style="width: 70px;">No.</th>
+                            <th>과정명</th>
+                            <th style="width: 160px;">학습시작</th>
+                            <th style="width: 160px;">학습종료</th>
+                            <th style="width: 90px;">진도</th>
+                            <th style="width: 90px;">총점</th>
+                            <th style="width: 90px;">상태</th>
+                            <th style="width: 140px;">이수증</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- js에서 더미데이터 사용(화면 확인용) -->
+                    </tbody>
+                </table>
+                <!-- 회원 목록 페이징 버튼(공통 css,js) -->
+                <div id="modal_pagination" class="paging_btn"></div>
+            </div>
+        </div>
+
+    </main>
+    <!-- 푸터(푸터 css) -->
+    <div id="admin_footer">
+        ⓒ 2025 LIFE SAVER. All rights reserved.
+    </div>
+</body>
+<!-- 공통 js -->
+<script src="../adminBaseJs/adminCommon.js"></script>
+<!-- 회원 목록 전용 js -->
+<script src="js/adminUser.js"></script>
+
+</html>
