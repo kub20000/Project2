@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지</title>
+    <!-- 헤더 css -->
+    <link rel="stylesheet" href="../adminBaseCss/header/adminHeader.css">
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="../adminBaseCss/footer/adminFooter.css">
+    <!-- 사이드바 css -->
+    <link rel="stylesheet" href="../adminBaseCss/sidebar/adminSidebar.css">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../adminBaseCss/adminCommon.css">
+    <!-- 관리자 메인 전용 -->
+    <link rel="stylesheet" href="css/adminHome.css">
+</head>
+
+<body>
+    <!-- 헤더(헤더 css) -->
+    <header id="admin_header">
+        <a href="http://127.0.0.1:5500/home/home.html" class="main_logo"><img src="img/logo.png" alt="logo"></a>
+        <div class="admin_info">
+            <p>관리자 님</p>
+            <a href="#" id="admin_logout" class="admin_logout_link">Logout</a>
+        </div>
+    </header>
+    <!-- 사이드바(사이드바 css, 공통 js) -->
+    <div id="admin_sidebar">
+        <a href="../adminHome/adminHome.html" class="admin_home">DashBoard</a>
+        <div class="admin_sidebar_menu">
+            <ul>
+                <li class="aSidebar_sub">
+                    <button type="button" class="sidebar_toggle">👤 회원</button>
+                    <ul class="aSidebar_sub_menu">
+                        <li><a href="../adminUser/adminUser.html">회원관리</a></li>
+                    </ul>
+                </li>
+
+                <li class="aSidebar_sub">
+                    <button type="button" class="sidebar_toggle">📚 교육</button>
+                    <ul class="aSidebar_sub_menu">
+                        <li><a href="../adminCourseList/adminCourseList.html" class="active">강의목록</a></li>
+                        <li><a href="../adminCourseAdd/adminCourseAdd.html">신규강의등록</a></li>
+                        <li><a href="#">교육자료</a></li>
+                        <li><a href="#">교육자료등록</a></li>
+                    </ul>
+                </li>
+
+                <li class="aSidebar_sub">
+                    <button type="button" class="sidebar_toggle">💬 소식센터</button>
+                    <ul class="aSidebar_sub_menu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">공지사항등록</a></li>
+                        <li><a href="#">문의사항</a></li>
+                        <li><a href="#">보도자료</a></li>
+                        <li><a href="#">보도자료등록</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 메인(공통 css) -->
+    <main id="container">
+        <!-- 맨 위 타이틀(공통 css) -->
+        <div class="main_title"><a href="../adminHome/adminHome.html">DashBoard</a></div>
+        <!-- 대시보드 -->
+        <div id="aDashboard_smr">
+            <a href="../adminUser/adminUser.html" class="smr_card total_users">
+                <p class="smr_title">총 수강생 수</p>
+                <p class="smr_value"><span id="total_users_cnt">125</span> 명</p>
+            </a>
+
+            <a href="#" class="smr_card avg_score">
+                <p class="smr_title">평균 시험 점수</p>
+                <p class="smr_value"><span id="avg_scr">86</span> 점</p>
+            </a>
+
+            <a href="#" class="smr_card comp_rate">
+                <p class="smr_title">교육 수료 비율</p>
+                <p class="smr_value"><span id="comp_per">60</span> %</p>
+            </a>
+
+            <a href="#" class="smr_card uncomp_rate">
+                <p class="smr_title">교육 미수료 비율</p>
+                <p class="smr_value"><span id="uncomp_per">40</span> %</p>
+            </a>
+        </div>
+    </main>
+    <!-- 푸터(푸터 css) -->
+    <div id="admin_footer">
+        ⓒ 2025 LIFE SAVER. All rights reserved.
+    </div>
+</body>
+<!-- 공통 js -->
+<script src="../adminBaseJs/adminCommon.js"></script>
+<!-- 관리자 메인 전용 js -->
+<!-- <script src="js/adminHome.js"></script> -->
+
+</html>
