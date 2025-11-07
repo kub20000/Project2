@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입1단계-이용약관동의</title>
+</head>
+<link rel="stylesheet" href="join.css" />
+<body>
+  
+    <header>
+    <div class="top">
+      <div class="login">
+        <a href="login/login.html">로그인</a><span>|</span><a href="agreement.html">회원가입</a>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      
+      <div class="logo_box">
+        <div class="logo">
+          <a href="../home.html"> <img src="../images/logo.png" alt="logo" class="logoImg" /></a>
+        </div>
+
+        <div class="nav-inner">
+          <ul class="menu">
+            <li class="menu-item"><a href="#">교육과정</a></li>
+            <li class="menu-item"><a href="#">소식센터</a></li>
+            <li class="menu-item"><a href="#">게임콘텐츠</a></li>
+            <li class="menu-item"><a href="#">나의강의실</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdowns" aria-hidden="true">
+        <div class="dropdown">
+          <a href="#">소개글</a>
+          <a href="#">강의 목록</a>
+          <a href="#">교육 자료</a>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">공지사항</a>
+          <a href="#">FAQ</a>
+          <a href="#">보도자료</a>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">응급 처치 게임</a>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">나의 학습 활동</a>
+          <a href="#">문의 사항</a>
+          <a href="#">수강 목록</a>
+          <a href="#">수료</a>
+          <a href="#">미수료</a>
+          <a href="#">회원 정보 수정</a>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+<main>
+    <div class="container">
+      <h1>회원가입</h1>
+      <h3>이용 약관 동의</h3>
+
+      
+      
+      <div class="agree-section">
+        <h3>서비스 이용 약관 동의 (필수) <span class="required">*</span></h3>
+        <div class="agree-box">
+          본 약관은 서비스를 이용함에 있어 필요한 기본적인 사항을 규정합니다.<br>
+          본 약관은 서비스를 이용함에 있어 필요한 기본적인 사항을 규정합니다.<br>
+          본 약관은 서비스를 이용함에 있어 필요한 기본적인 사항을 규정합니다.<br>
+           본 약관은 서비스를 이용함에 있어 필요한 기본적인 사항을 규정합니다.<br>
+        </div>
+        <div class="agree-check">
+          <input type="checkbox" id="agree1" class="required">
+          <label for="agree1">이용약관에 동의합니다 (필수)</label>
+        </div>
+      </div>
+
+     
+      <div class="agree-section">
+        <h3>개인정보 수집 및 이용 동의 (필수) <span class="required">*</span></h3>
+        <div class="agree-box">
+          수집한 개인정보는 서비스 제공을 위해 사용됩니다.
+        </div>
+        <div class="agree-check">
+          <input type="checkbox" id="agree2" class="required">
+          <label for="agree2">개인정보 수집 및 이용에 동의합니다 (필수)</label>
+        </div>
+      </div>
+
+     
+      <div class="agree-section">
+        <h3>위치기반 서비스 이용 동의 (필수) <span class="required">*</span></h3>
+        <div class="agree-box">
+          위치 정보는 맞춤 서비스 제공을 위해 사용됩니다.
+        </div>
+        <div class="agree-check">
+          <input type="checkbox" id="agree3" class="required">
+          <label for="agree3">위치기반 서비스 이용에 동의합니다 (필수)</label>
+        </div>
+      </div>
+
+      
+      <div class="agree-section">
+        <h3>마케팅 정보 수신 동의 (선택)</h3>
+        <div class="agree-box">
+          다양한 이벤트 및 혜택 정보를 이메일로 받아보실 수 있습니다.
+        </div>
+        <div class="agree-check">
+          <input type="checkbox" id="agree4">
+          <label for="agree4">마케팅 정보 수신에 동의합니다 (선택)</label>
+        </div>
+      </div>
+
+      
+      <div class="final-check">
+        <input type="checkbox" id="allCheck">
+        <label for="allCheck">전체 약관에 동의합니다.</label>
+      </div>
+
+    
+      <div class="signup-buttons">
+        <button class="next">다음</button>
+        <button class="cancel" onclick="history.back()">취소</button>
+      </div>
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="brand-main">First Aid</span>
+        <span class="brand-sub">Academy</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">교육과정</a>
+        <a href="#">소식센터</a>
+        <a href="#">게임콘텐츠</a>
+        <a href="#">나의강의실</a>
+      </div>
+
+      <div class="footer-info">
+        <p>© First Aid Academy. All Rights Reserved.</p>
+        <p>tel: 042-222-2402 | 주소 : 대전광역시 중구 중앙로121번길 20</p>
+      </div>
+    </div>
+  </footer>
+
+ 
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const allCheck = document.getElementById('allCheck');
+    const checkboxes = document.querySelectorAll('.agree-check input[type="checkbox"]');
+    const nextBtn = document.querySelector('.next');
+
+    // 전체 동의 클릭 시 전체 체크박스 상태 변경
+    allCheck.addEventListener('change', function() {
+      checkboxes.forEach(chk => chk.checked = this.checked);
+    });
+
+    // 개별 체크 변경 시 전체동의 상태 갱신
+    checkboxes.forEach(chk => {
+      chk.addEventListener('change', () => {
+        const allChecked = Array.from(checkboxes).every(c => c.checked);
+        allCheck.checked = allChecked;
+      });
+    });
+
+    // 다음 버튼 클릭 시 필수항목 확인
+    nextBtn.addEventListener('click', function() {
+      const requiredChecks = document.querySelectorAll('.agree-check input.required');
+      const allRequiredChecked = Array.from(requiredChecks).every(chk => chk.checked);
+
+      if (!allRequiredChecked) {
+        alert('필수 약관에 모두 동의해야 합니다.');
+        return;
+      }
+
+      alert('모든 필수 약관에 동의하셨습니다. 다음 단계로 이동합니다.');
+      window.location.href = 'info.html';
+    });
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>인트로</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Noto Sans KR", sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      transition: background-color 1s ease;
+    }
+
+    section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 1s ease, opacity 1s ease;
+      opacity: 0;
+    }
+
+    section.active {
+      opacity: 1;
+    }
+
+    .section-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* 왼쪽 텍스트 영역 */
+    .text-area {
+      flex: 1;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 5%;
+      height: 100%;
+    }
+
+    .text-area h1 {
+      font-size: 4rem;
+      color: #0076a3;
+      margin-bottom: 1rem;
+      animation: textFade 1s ease;
+    }
+
+    .text-area p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    .learn-more {
+      border-bottom: 2px solid #0076a3;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .learn-more:hover {
+      color: #0076a3;
+    }
+
+    /* 오른쪽 이미지 영역 - 오른쪽 절반 꽉 채우기 */
+    .image-area {
+      flex: 1;
+      height: 100vh;
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
+      transition: opacity 1s ease;
+    }
+
+    /* 각 섹션별 배경색 & 이미지 */
+    #section1 {
+      background-color: #ffffff;
+    }
+    #section1 .image-area {
+      background-image: url('firstAid.jpg');
+    }
+
+    #section2 {
+      background-image: url('firstAid.jpg');
+    }
+    #section2 .image-area {
+      background-image: url('https://images.unsplash.com/photo-1581093588401-22d08aa5e3b4?auto=format&fit=crop&w=1000&q=80');
+    }
+
+    #section3 {
+      background-color: #0076a3;
+      color: #fff;
+    }
+    #section3 .text-area h1,
+    #section3 .text-area p,
+    #section3 .learn-more {
+      color: #fff;
+      border-color: #fff;
+    }
+    #section3 .image-area {
+      background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437f9?auto=format&fit=crop&w=1000&q=80');
+    }
+
+   
+
+    /* === 왼쪽 도트 네비게이션 === */
+    .dot-nav {
+      position: fixed;
+      left: 35px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 100;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .dot.active {
+      background-color: #00b4d8;
+      box-shadow: 0 0 15px #00b4d8, 0 0 25px #00b4d8;
+      transform: scale(1.3);
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+
+    
+  </style>
+</head>
+<body>
+  <!-- 도트 네비게이션 -->
+  <div class="dot-nav">
+    <div class="dot active" data-index="0"></div>
+    <div class="dot" data-index="1"></div>
+    <div class="dot" data-index="2"></div>
+  </div>
+
+  <!-- 섹션 1 -->
+  <section id="section1" class="active">
+    <div class="section-content">
+      <div class="text-area">
+        <a href="home.html"> <img src="images/logo.png" alt="logo" class="logoImg" /></a>
+        <p>생명을 구하는 첫걸음,<br>언제 어디서나 배울 수 있는 스마트 응급처치 플랫폼</p>
+        <div class="learn-more">LEARN MORE</div>
+      </div>
+      <div class="image-area"></div>
+    </div>
+  </section>
+
+  <!-- 섹션 2 -->
+  <section id="section2">
+    <div class="section-content">
+      <div class="text-area">
+        <h1>사이트 소개</h1>
+        <p>응급 상황 대처를<br>
+        체계적으로 학습할 수 있는 맞춤형 LMS 시스템입니다.</p>
+        <div class="learn-more">MORE INFO</div>
+      </div>
+      <div class="image-area"></div>
+    </div>
+  </section>
+
+  <!-- 섹션 3 -->
+  <section id="section3">
+    <div class="section-content">
+      <div class="text-area">
+        <h1>주요 컨텐츠</h1>
+        <p>실시간 응급 상황 시뮬레이션<br>
+           단계별 학습 모듈<br>
+           실습 결과 분석 & 리포트 제공</p>
+        <div class="learn-more">START LEARNING</div>
+      </div>
+      <div class="image-area"></div>
+    </div>
+  </section>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const dots = document.querySelectorAll(".dot");
+    let current = 0;
+    let isScrolling = false;
+
+    function showSection(index) {
+      if (index < 0 || index >= sections.length) return;
+      sections[current].classList.remove("active");
+      dots[current].classList.remove("active");
+      current = index;
+      sections[current].classList.add("active");
+      dots[current].classList.add("active");
+      sections[current].scrollIntoView({ behavior: "smooth" });
+      document.body.style.backgroundColor = getComputedStyle(sections[current]).backgroundColor;
+    }
+
+    window.addEventListener("wheel", (e) => {
+      if (isScrolling) return;
+      isScrolling = true;
+      if (e.deltaY > 0) showSection(current + 1);
+      else showSection(current - 1);
+      setTimeout(() => { isScrolling = false; }, 1200);
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener("click", () => {
+        const index = parseInt(dot.getAttribute("data-index"));
+        showSection(index);
+      });
+    });
+  </script>
+</body>
+</html>
