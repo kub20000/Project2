@@ -1,0 +1,31 @@
+/* ===== 썸네일 미리보기 ===== */
+.preview_box {
+    margin-top: 10px;
+}
+
+.preview_box img {
+    width: 200px;
+    height: 120px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    object-fit: cover;
+}
+
+/* ===== 영상 업로드 영역 ===== */
+.upload_box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.upload_input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.upload_input label {
+    min-width: 60px;
+    font-weight: 500;
+}
