@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시험 결과</title>
+    <link rel="stylesheet" href="exam.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <main id="container">
+
+        <div class="exam_container">
+            <span class="close-btn" id="closeExam">&times;</span>
+
+
+
+            <div class="exam_top">
+                <div class="exam_title_box">
+                    <div class="exam_title_row">
+                        <h2 class="exam_title">자바 기초 모의고사</h2>
+                        <div class="score_box">
+                            <p class="score_label">총점: <span class="final_score">50점</span></p>
+                            <span class="score_badge" id="scoreBadge"></span>
+                        </div>
+                    </div>
+                    <div class="exam_sub">
+                        <div class="exam_sub_info">
+                            <p>
+                                응시일: <span id="exam_date" class="exam_date">2025-11-12</span>
+                                &nbsp;&nbsp; 응시자: <span id="exam_user_name" class="exam_user">학생</span>
+                            </p>
+                        </div>
+                        <div class="exam_info_box">
+                            <span class="exam_total">객관식 4지선다 5문항</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="exam_main">
+                <div class="question_card incorrect" id="question1">
+                    <div class="question_header">
+                        <span class="q_number">Q1</span>
+                        <p class="q_text">자바 클래스에 대한 설명으로 옳지 않은 것은?</p>
+                    </div>
+
+                    <div class="options_group">
+                        <label class="option_item" data-value="A">
+                            <span class="option_label">A</span>
+                            <span class="option_text">클래스는 객체를 생성하기 위한 설계도이다.</span>
+                        </label>
+
+                        <label class="option_item correct_answer" data-value="B"> <span class="option_label">B</span>
+                            <span class="option_text">하나의 .java 파일에 public 클래스는 여러 개 있을 수 있다.</span>
+                            <span class="result_tag correct">정답</span>
+                        </label>
+
+                        <label class="option_item" data-value="C">
+                            <span class="option_label">C</span>
+                            <span class="option_text">클래스는 필드, 메서드, 생성자를 가질 수 있다.</span>
+                        </label>
+
+                        <label class="option_item user_selected" data-value="D"> <span class="option_label">D</span>
+                            <span class="option_text">클래스 이름과 파일 이름은 public 클래스일 경우 동일해야 한다.</span>
+                            <span class="result_tag incorrect">내가 선택한 답</span> </label>
+                    </div>
+
+                    <div class="explanation_toggle_box">
+                        <p class="toggle_btn" onclick="toggleExplanation('exp1')">
+                            <i class="fa-solid fa-caret-down"></i> 해설 보기
+                        </p>
+                        <div class="explanation_content" id="exp1" style="display: none;">
+                            <p>
+                                **해설 내용**: 자바에서는 하나의 .java 파일에 public 클래스는 오직 **하나만** 선언할 수 있으며, 이 클래스의 이름이 파일 이름과 동일해야
+                                합니다. 따라서 여러 개 있을 수 있다는 설명은 옳지 않습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question_card correct" id="question2">
+                    <div class="question_header">
+                        <span class="q_number">Q2</span>
+                        <p class="q_text">자바 클래스에 대한 설명으로 옳지 않은 것은?</p>
+                    </div>
+
+                    <div class="options_group">
+                        <label class="option_item correct_answer user_selected" data-value="A"> <span
+                                class="option_label">A</span>
+                            <span class="option_text">클래스는 객체를 생성하기 위한 설계도이다.</span>
+                            <span class="result_tag correct">정답</span>
+                        </label>
+
+                        <label class="option_item" data-value="B">
+                            <span class="option_label">B</span>
+                            <span class="option_text">하나의 .java 파일에 public 클래스는 여러 개 있을 수 있다.</span>
+                        </label>
+
+                        <label class="option_item" data-value="C">
+                            <span class="option_label">C</span>
+                            <span class="option_text">클래스는 필드, 메서드, 생성자를 가질 수 있다.</span>
+                        </label>
+
+                        <label class="option_item" data-value="D">
+                            <span class="option_label">D</span>
+                            <span class="option_text">클래스 이름과 파일 이름은 public 클래스일 경우 동일해야 한다.</span>
+                        </label>
+                    </div>
+                    <div class="explanation_toggle_box">
+                        <p class="toggle_btn" onclick="toggleExplanation('exp2')">
+                            <i class="fa-solid fa-caret-down"></i> 해설 보기
+                        </p>
+                        <div class="explanation_content" id="exp2" style="display: none;">
+                            <p>
+                                **해설 내용**: (Q2의 정답에 대한 해설)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="exam_submit_box">
+                <button type="button" class="submit_btn" id="completeBtn">수료하기</button>
+                <button type="button" class="submit_btn" id="retryBtn">재응시</button>
+            </div>
+
+        </div>
+    </main>
+</body>
+<script src="exam.js"></script>
+
+</html>
