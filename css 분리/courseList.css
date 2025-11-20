@@ -1,0 +1,254 @@
+/* ================================
+   수강 목록 페이지 전용 스타일
+================================ */
+
+/* FILTER + SEARCH */
+.filter-search {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.filter-select {
+  padding: 10px 30px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-box i {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+/* ===================
+     수강 카드 리스트
+=================== */
+.course-List {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 400px;
+  padding: 30px 0;
+}
+
+.course-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  max-width: calc((100% - 40px) / 3);
+  background: #fff;
+  border: 1px solid #c7c7c7;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.thumbnail {
+  background: #eee center/cover no-repeat;
+  height: 180px;
+  border-bottom: 1px solid #eee;
+}
+
+.course-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.course-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.category-tags span {
+  background: #e0e7ec;
+  color: #274e66;
+  font-size: 13px;
+  border-radius: 12px;
+  padding: 4px 10px;
+  margin-right: 6px;
+}
+
+.course-desc {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0 18px;
+  min-height: 60px;
+}
+
+.play-btn {
+  align-self: flex-end;
+  width: 110px;
+  background: #3b6e91;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  background: #274e66;
+}
+
+/* ===================
+     강의 팝업
+=================== */
+.lecture-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  overflow-y: auto;
+  padding: 40px 0;
+}
+
+.lecture-container {
+  width: 1600px;
+  min-height: 800px;
+  background: #ececec;
+  border-radius: 16px;
+  margin: 0 auto;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn {
+  position: absolute;
+  top: -7px;
+  right: 3px;
+  font-size: 35px;
+  color: #7d8891;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #3b6e91;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tab-btn {
+  flex: 1;
+  background: #c9dbe8;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #3b6e91;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.lecture-list li {
+  padding: 14px;
+  background: #e6edf2;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.lecture-list li.active {
+  background: #3b6e91;
+  color: #fff;
+}
+
+/* ===================
+     수료 카드
+=================== */
+.completion-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.completion-item {
+  display: flex;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e6edf2;
+  border-radius: 12px;
+  height: 200px;
+}
+
+.thumbnail-box {
+  width: 200px;
+  height: 160px;
+  background: #f5f8fb;
+  border-radius: 8px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cert1,
+.btn-cert2 {
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-cert1 {
+  background: #3b6e91;
+  color: #fff;
+}
+
+.btn-cert2 {
+  background: #ddd;
+}
+
+.btn-cert1:hover {
+  background: #274e66;
+}
+
+.btn-cert2:hover {
+  background: #ccc;
+}
